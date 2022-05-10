@@ -35,5 +35,14 @@ def create_app():
     api=Api(app, doc='/docs')
     api.add_namespace(exchange_api)
     api.add_namespace(account_api)
-    
+
+    """ This is a test """
+    from flask_restx import Resource, Namespace
+    test_api=Namespace('test')
+    api.add_namespace(test_api)
+    @test_api.route("/")
+    class TestResource(Resource):
+        def get(self):
+            return "Hello Flask!"
+        
     return app
