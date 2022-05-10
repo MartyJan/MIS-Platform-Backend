@@ -44,5 +44,5 @@ def create_app():
     class TestResource(Resource):
         def get(self):
             return "Hello Flask!"
-        
+         
     return app
